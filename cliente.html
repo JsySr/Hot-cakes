@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="img/hot-cakes.jpg" type="image/x-icon">
+    <title>Special Hot-Cake</title>
+
+    <style>
+        /* Estilos simples para mejorar la apariencia */
+        .formulario-section, .descargas-section {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input[type="text"], input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .navbar {
+            margin-bottom: 20px;
+        }
+
+        .embed-responsive-container {
+            position: relative;
+            overflow: hidden;
+            padding-top: 56.25%;
+        }
+
+        .embed-responsive-item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .text-center h3, .text-center h4 {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a href="index.html" class="navbar-brand tuzo">
+                    <img src="img/hot-cakes.jpg" alt="FlanTastic" width="70" height="60"><br>
+                    <strong>Hot-Cake</strong>
+                </a>
+                <h1 style="text-align: center; color: white; margin-top: 20px;">FORMULARIO</h1>
+            </div>
+        </div>
+    </header>
+
+    <br>
+
+    <section id="formulario" class="formulario-section">
+        <center>
+            <h2>Formulario de Compra</h2>
+        </center>
+        <br>
+
+        <form id="compraForm" class="compra-form">
+            <label for="direccion">Nombre Completo:</label>
+            <input type="text" id="nombrecompleto" name="nombrecompleto" required><br><br>
+
+            <label for="direccion">Dirección física:</label>
+            <input type="text" id="direccion" name="direccion" required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required pattern="[a-z0-9._%+-]+@gmail\.com$" title="Debe ser un correo de Gmail"><br><br>
+
+            <button type="submit" class="submit-btn">Enviar</button>
+        </form>
+    </section>
+
+    <center>
+        <section id="descargas" class="descargas-section">
+            <h2>Descargar Datos</h2>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a href="/descargar-clientes" class="btn btn-primary">Descargar Clientes</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="/descargar-proveedores" class="btn btn-primary">Descargar Proveedores</a>
+                </li>
+            </ul>
+        </section>
+    </center>
+
+    <br>
+
+    <footer class="bg-dark text-center text-white">
+        <div class="container p-4 pb-0">
+            <div>Redes sociales</div>
+            <section class="mb-4">
+                <!-- Facebook -->
+                <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/profile.php?id=61554432877812&mibextid=ZbWKwL" role="button" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            </section>
+        </div>
+        <style>
+            .p {
+                text-decoration: none;
+                color: white;
+            }
+
+            .p:hover {
+                color: white;
+            }
+
+            #imagenbg {
+                margin-top: 5px;
+            }
+
+            .vendidos {
+                margin-top: 10px;
+            }
+        </style>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2024 Copyright:
+            <a class="p" href="#">Special Hot-Cake</a>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            <h3>Ubicación</h3>
+            <br>
+            <div class="embed-responsive-container">
+                <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3747.1749394391463!2d-98.77389526054579!3d20.08497270349567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1a1d7c0f1cfa3%3A0x122870c3429e18a8!2sInstituto%20Tecnol%C3%B3gico%20de%20Pachuca%20(ITP)!5e0!3m2!1ses-419!2smx!4v1669167102410!5m2!1ses-419!2smx" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <br>
+            <div>
+                <a class="p" href="#">Carretera México - Pachuca Km. 87.5, C.P. 42080, Colonia Venta Prieta, Pachuca de Soto, Hidalgo, México.</a>
+            </div>
+            <div id="ubicacion">
+                Tus coordenadas aparecerán aquí
+            </div>
+            <br>
+            <h4>Teléfono</h4>
+            <a class="btn btn-outline-light btn-floating m-1 col-lg-3 col-md-6 mb-4 mb-md-0" href="tel:+527721509150" role="button"><i class="fa-solid fa-phone"></i>&nbsp&nbsp7721609150</a>
+            <a class="btn btn-outline-light btn-floating m-1 col-lg-3 col-md-6 mb-4 mb-md-0" href="tel:+527721319587" role="button"><i class="fa-solid fa-phone"></i>&nbsp&nbsp7721319587</a>
+            <a class="btn btn-outline-light btn-floating m-1 col-lg-3 col-md-6 mb-4 mb-md-0" href="tel:+527714413271" role="button"><i class="fa-solid fa-phone"></i>&nbsp&nbsp7714413271</a>
+            <a class="btn btn-outline-light btn-floating m-1 col-lg-3 col-md-6 mb-4 mb-md-0" href="tel:+527712314884" role="button"><i class="fa-solid fa-phone"></i>&nbsp&nbsp7712314884</a>
+            <br>
+            <br>
+            <center>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-start">
+                    <center>
+                        <h5 class="text-upper">Inventario</h5>
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a class="text-white p1" onclick="mostrarAlerta()">Registrar nuevo producto</a>
+                            </li>
+                            <li>
+                                <a href="vendidos1.php" class="text-white p1">Productos más vendidos</a>
+                            </li>
+                        </ul>
+                    </center>
+                </div>
+            </center>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBogGz5GJpLxb5O9r5pa5O5eQQ3AltFdHSiuJp2ur/Scorym" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-QMVnqD8XH4FffYKCf9gFspIBJ4rbQ/rfGIA9lCio4uBoFAfHS+9KR3KekHr4vsOO" crossorigin="anonymous"></script>
+    <script src="cliente.js"></script>
+    <script>
+        window.onload = miUbicacion;
+        function miUbicacion() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(muestraMiUbicacion);
+            } else {
+                alert("Los servicios de geolocalización no están disponibles");
+            }
+        }
+
+        function muestraMiUbicacion(posicion) {
+            var latitud = posicion.coords.latitude;
+            var longitud = posicion.coords.longitude;
+            var output = document.getElementById("ubicacion");
+            output.innerHTML = "Latitud: " + latitud + "  Longitud: " + longitud;
+        }
+
+        document.getElementById("aceptar_cookies").addEventListener("click", function () {
+            document.cookie = "acepto_cookies=true; expires=Fri, 31 Dec 9999 23:59:59 GMT;";
+            document.getElementById("mensaje_cookies").style.display = "none";
+        });
+
+        document.getElementById("rechazar_cookies").addEventListener("click", function () {
+            document.getElementById("mensaje_cookies").style.display = "none";
+        });
+
+        <script src="provedores.js">
+            </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Inventario</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #2e497a;
+        }
+        th {
+            background-color: #2e497a;
+        }
+        .carrito {
+            margin-top: 20px;
+        }
+        .carrito th, .carrito td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #6082c1;
+        }
+        .carrito th {
+            background-color: #2e497a;
+        }
+        footer {
+            background-color: #2e497a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link rel="shortcut icon" href="img/hot-cakes.jpg" type="image/x-icon">
+    <title>Special Hot-Cake</title>
+
+</head>
+<body>
+
+    <header>
+        <div class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a href="index.html" class="navbar-brand tuzo">
+                    <img src="img/hot-cakes.jpg" alt="FlanTastic" width="70" height="60"><br>
+                    <strong>Hot-Cake</strong>
+                </a>
+                <h1 style="text-align: center; color: white; margin-top: 20px;">Control de Inventario</h1>
+            </div>
+        </div>
+    </header>
+    <br>
+    <center>
+        <h2>Tabla de Productos</h2>
+    </center>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID Producto</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Precio Unitario</th>
+                <th>Stock Disponible</th>
+                <th>Stock Mínimo</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="productosBody">
+            <tr data-id="1">
+                <td>1</td>
+                <td>Orden 1</td>
+                <td>Hot-Cakes con sabor a vainilla</td>
+                <td>$10.00</td>
+                <td>100</td>
+                <td>10</td>
+                <td><button onclick="agregarAlCarrito(1)">Agregar al Carrito</button></td>
+            </tr>
+            <tr data-id="2">
+                <td>2</td>
+                <td>Orden 2</td>
+                <td>Hot-Cakes con sabor chocolate</td>
+                <td>$15.00</td>
+                <td>50</td>
+                <td>5</td>
+                <td><button onclick="agregarAlCarrito(2)">Agregar al Carrito</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+
+    <center>
+        <h2>Carrito de Compras</h2>
+    </center>
+
+    <table class="carrito">
+        <thead>
+            <tr>
+                <th>ID Producto</th>
+                <th>Nombre Producto</th>
+                <th>Cantidad</th>
+                <th>Precio Unitario</th>
+                <th>Precio Total</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="carritoBody"></tbody>
+    </table>
+    <button onclick="comprar()">Comprar</button>
+    <br>
+
+    <footer class="bg-dark text-center text-white">
+        <div class="container p-4 pb-0">
+            <div>Redes sociales</div>
+            <section class="mb-4">
+                <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/profile.php?id=61554432877812&mibextid=ZbWKwL" role="button" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            </section>
+        </div>
+
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2024 Copyright:
+            <a class="p" href="#">Special Hot-Cake</a>
+        </div>
+
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            <h3>Ubicación</h3>
+            <br>
+            <div class="embed-responsive-container">
+                <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3747.1749394391463!2d-98.77389526054579!3d20.08497270349567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1a1d7c0f1cfa3%3A0x122870c3429e18a8!2sInstituto%20Tecnol%C3%B3gico%20de%20Pachuca%20(ITP)!5e0!3m2!1ses-419!2smx!4v1669167102410!5m2!1ses-419!2smx" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="col-lg-3 col-md-6 mb-4 mb-md-0"></iframe>
+            </div>
+            <br>
+        </div>
+    </footer>
+
+    <script>
+        const carrito = [];
+
+        function agregarAlCarrito(idProducto) {
+            const fila = document.querySelector(`tr[data-id="${idProducto}"]`);
+            const nombre = fila.children[1].innerText;
+            const precio = parseFloat(fila.children[3].innerText.replace('$', ''));
+            const stockDisponible = parseInt(fila.children[4].innerText);
+            
+            let itemEnCarrito = carrito.find(item => item.id === idProducto);
+            
+            if (itemEnCarrito) {
+                if (itemEnCarrito.cantidad < stockDisponible) {
+                    itemEnCarrito.cantidad++;
+                } else {
+                    alert('No hay suficiente stock disponible.');
+                }
+            } else {
+                carrito.push({
+                    id: idProducto,
+                    nombre: nombre,
+                    precio: precio,
+                    cantidad: 1
+                });
+            }
+            
+            mostrarCarrito();
+        }
+
+        function mostrarCarrito() {
+            const carritoBody = document.getElementById('carritoBody');
+            carritoBody.innerHTML = '';
+            
+            carrito.forEach(item => {
+                const fila = document.createElement('tr');
+                fila.innerHTML = `
+                    <td>${item.id}</td>
+                    <td>${item.nombre}</td>
+                    <td>${item.cantidad}</td>
+                    <td>$${item.precio.toFixed(2)}</td>
+                    <td>$${(item.cantidad * item.precio).toFixed(2)}</td>
+                    <td><button onclick="eliminarDelCarrito(${item.id})">Eliminar</button></td>
+                `;
+                carritoBody.appendChild(fila);
+            });
+
+            const filaTotal = document.createElement('tr');
+            const total = carrito.reduce((acc, item) => acc + (item.cantidad * item.precio), 0);
+            filaTotal.innerHTML = `
+                <td colspan="4"><strong>Total:</strong></td>
+                <td id="totalCompra">$${total.toFixed(2)}</td>
+                <td></td>
+            `;
+            carritoBody.appendChild(filaTotal);
+        }
+
+        function eliminarDelCarrito(idProducto) {
+            const index = carrito.findIndex(item => item.id === idProducto);
+            if (index !== -1) {
+                carrito.splice(index, 1);
+            }
+            mostrarCarrito();
+        }
+
+        async function enviarCorreo(correo, contenido) {
+            try {
+                let response = await fetch('http://localhost:3000/enviar-correo', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ correo: correo, contenido: contenido })
+                });
+                if (response.ok) {
+                    alert('Correo enviado con éxito.');
+                } else {
+                    alert('Error al enviar el correo.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error al enviar el correo.');
+            }
+        }
+
+        function comprar() {
+            if (carrito.length === 0) {
+                alert('No hay productos en el carrito.');
+                return;
+            }
+            let correo = prompt('Por favor, ingresa tu correo electrónico para enviar el ticket de compra:');
+            if (correo) {
+                let contenidoCorreo = 'Aquí está tu ticket de compra:\n\n';
+                contenidoCorreo += 'Productos:\n';
+                carrito.forEach(item => {
+                    contenidoCorreo += `- ${item.nombre}: ${item.cantidad} x $${item.precio.toFixed(2)} = $${(item.cantidad * item.precio).toFixed(2)}\n`;
+                });
+                contenidoCorreo += '\nTotal: $' + document.getElementById('totalCompra').innerText;
+                contenidoCorreo += '\n\n¡Gracias por tu compra!';
+                enviarCorreo(correo, contenidoCorreo);
+                carrito.length = 0;
+                mostrarCarrito();
+            } else {
+                alert('Se requiere un correo electrónico para enviar el ticket de compra.');
+            }
+        }
+    </script>
+</body>
+</html>

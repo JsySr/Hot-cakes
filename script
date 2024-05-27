@@ -1,0 +1,64 @@
+-- Crear la base de datos
+CREATE DATABASE IF NOT EXISTS gestion_inventario;
+
+-- Usar la base de datos
+USE gestion_inventario;
+
+-- Crear la tabla ctg_Producto
+CREATE TABLE IF NOT EXISTS ctg_Producto (
+    ID_Producto INT NOT NULL AUTO_INCREMENT,
+    Nombre VARCHAR(255) NOT NULL,
+    Descripción TEXT,
+    Precio_Unitario DECIMAL(10,2) NOT NULL,
+    Stock_Disponible INT NOT NULL DEFAULT 0,
+    Stock_Minimo INT NOT NULL DEFAULT 0,
+    PRIMARY KEY (ID_Producto)
+);
+
+-- Crear la tabla ctg_Proveedor
+CREATE TABLE IF NOT EXISTS ctg_Proveedor (
+    ID_Proveedor INT NOT NULL AUTO_INCREMENT,
+    Nombre VARCHAR(255) NOT NULL,
+    Contacto VARCHAR(255),
+    Dirección TEXT,
+    Teléfono VARCHAR(255),
+    PRIMARY KEY (ID_Proveedor)
+);
+
+-- Crear la tabla ms_compras
+CREATE TABLE IF NOT EXISTS ms_compras (
+    ID_Compra INT NOT NULL AUTO_INCREMENT,
+    ID_Producto INT NOT NULL,
+    ID_Proveedor INT NOT NULL,
+    cod_barra INT,
+    Cantidad INT NOT NULL DEFAULT 0,
+    Precio_Unitario_Compra DECIMAL(10,2) NOT NULL,
+    Fecha_Compra DATE,
+    PRIMARY KEY (ID_Compra),
+    FOREIGN KEY (ID_Producto) REFERENCES ctg_Producto(ID_Producto),
+    FOREIGN KEY (ID_Proveedor) REFERENCES ctg_Proveedor(ID_Proveedor)
+);
+
+-- Crear la tabla ctg_cliente
+CREATE TABLE IF NOT EXISTS ctg_cliente (
+    ID_cliente INT NOT NULL AUTO_INCREMENT,
+    Nombre VARCHAR(255) NOT NULL,
+    Contacto VARCHAR(255),
+    Dirección TEXT,
+    Teléfono VARCHAR(255),
+    PRIMARY KEY (ID_cliente)
+);
+
+-- Crear la tabla ms_ventas
+CREATE TABLE IF NOT EXISTS ms_ventas (
+    ID_Venta INT NOT NULL AUTO_INCREMENT,
+    ID_Producto INT NOT NULL,
+    ID_cliente INT NOT NULL,
+    cod_barra INT,
+    Cantidad INT NOT NULL DEFAULT 0,
+    Precio_Unitario_Venta DECIMAL(10,2) NOT NULL,
+    Fecha_Venta DATE,
+    PRIMARY KEY (ID_Venta),
+    FOREIGN KEY (ID_Producto) REFERENCES ctg_Producto(ID_Producto),
+    FOREIGN KEY (ID_cliente) REFERENCES ctg_cliente(ID_cliente)
+);
